@@ -3,8 +3,24 @@ $(document).ready(function () {
     centerMode: true,
     centerPadding: "5px",
     slidesToShow: 5,
+    slidesToScroll: 1,
     asNavFor: ".clients-review-slider",
-    variableWidth: true,
+    infinite: true,
+    responsive : [
+      {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 3,
+        centerPadding: "0px",
+      },
+    },
+      {
+      breakpoint: 576,
+      settings: {
+        slidesToShow: 1,
+      }
+    }
+    ]
   });
   $(".clients-review-slider").slick({
     slidesToShow: 1,
@@ -12,6 +28,7 @@ $(document).ready(function () {
     speed: 400,
     fade: true,
     cssEase: "linear",
+    infinite: true,
   });
   $(".clients-slider .slick-center").prev().addClass("slick-left");
   $(".clients-slider .slick-center").next().addClass("slick-right");

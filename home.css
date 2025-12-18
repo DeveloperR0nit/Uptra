@@ -374,7 +374,7 @@ Clients Section
   margin: 7px 0 13px;
 }
 .clients-slider {
-  max-width: 620px;
+  max-width: 670px;
   margin: auto;
 }
 .clients-slider-card {
@@ -483,7 +483,7 @@ Clients Section
     width: 45px;
   }
   .clients-slider {
-    max-width: 375px;
+    max-width: 396px;
   }
   .clients-sec .clients-slider .slick-next {
     right: -80px;
@@ -492,15 +492,16 @@ Clients Section
     left: -80px;
   }
 }
-@media screen and (max-width: 576px) {
-  .clients-slider {
-    max-width: 165px;
-  }
+@media screen and (max-width: 560px) {
   .clients-sec .clients-slider .slick-next {
-    right: -65px;
+    right: 0;
   }
   .clients-sec .clients-slider .slick-prev {
-    left: -65px;
+    left: 0;
+  }
+  .clients-slider-card {
+    width: 132px;
+    margin: auto;
   }
 }
 
@@ -521,8 +522,8 @@ Streamline Section
   line-height: 55px;
   margin-top: 7px;
 }
-.streamline-sec .subtitle{
-  color: white ;
+.streamline-sec .subtitle {
+  color: white;
 }
 .streamline-left-part {
   max-width: 472px;
