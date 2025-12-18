@@ -127,6 +127,7 @@ a {
   text-transform: uppercase;
   font-size: 16px;
   width: fit-content;
+  color: var(--primary-color);
 }
 .title-1 {
   font-size: 70px;
@@ -372,70 +373,135 @@ Clients Section
   text-align: center;
   margin: 7px 0 13px;
 }
-.clients-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 72px;
+.clients-slider {
+  max-width: 620px;
+  margin: auto;
 }
-.clients-info-box {
-  padding: 40px 0;
-  position: relative;
-  max-width: 788px;
-}
-.clients-info-box::before {
-  content: "";
-  background: url("./assests/clients-info-bg-img.png") no-repeat center/cover;
-  opacity: 20%;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-}
-.client-profiles {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 34px;
-}
-.edge-profile {
-  height: 62px;
-  width: 62px;
-  border-radius: 50%;
-  filter: grayscale(100%);
-}
-.center-edge-profile {
-  height: 92px;
-  width: 92px;
-  border-radius: 50%;
-  filter: grayscale(100%);
-}
-.center-profile {
+.clients-slider-card {
   height: 132px;
-  width: 132px;
-  border-radius: 50%;
+  filter: grayscale(1);
+  opacity: 0.5;
+  transition: 0.3s linear;
+  transform: scale(0.47);
 }
-.client-sec-para {
-  margin: 22px 0 26px;
+.slick-start .clients-slider-card {
+  transform-origin: right center;
+}
+.slick-end .clients-slider-card {
+  transform-origin: left center;
+}
+.slick-left .clients-slider-card,
+.slick-right .clients-slider-card {
+  filter: grayscale(0.5);
+  opacity: 0.8;
+  transform: scale(0.7);
+}
+.slick-center .clients-slider-card {
+  filter: grayscale(0);
+  opacity: 1;
+  transform: scale(1);
+}
+.clients-review-card {
+  max-width: 803px;
+  margin: auto;
   text-align: center;
+  margin-top: 22px;
 }
-.client-name {
+.clients-review-card p {
+  line-height: calc(24 / 16);
+}
+.clients-review-card h3 {
   font-family: Chillax-SemiBold;
-  color: var(--primary-color);
-  text-align: center;
-  margin-bottom: 2px;
+  margin: 26px 0 2px;
 }
-.client-role {
-  font-family: Chillax-Regular;
-  font-size: 13px;
-  text-align: center;
+.clients-review-card h4 {
+  font-family: Chillax-Medium;
 }
-.client-btn {
+.clients-sec .clients-slider .slick-prev {
   height: 68px;
   width: 68px;
   border-radius: 50%;
+  box-shadow: 0 4px 44px #c5cbc5;
+  left: -175px;
+  top: 100%;
+  z-index: 999;
+}
+.clients-sec .clients-slider .slick-next {
+  height: 68px;
+  width: 68px;
+  border-radius: 50%;
+  box-shadow: 0 4px 44px #c5cbc5;
+  right: -175px;
+  top: 100%;
+  z-index: 999;
+}
+.clients-sec .clients-slider .slick-prev::before,
+.clients-sec .clients-slider .slick-next::before {
+  content: "";
+  background: url("./assests/client-slider-right-arrow.png") no-repeat
+    center/cover;
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+}
+.clients-sec .clients-slider .slick-prev::before {
+  transform: rotate(180deg);
+}
+.clients-sec .clients-review-slider .slick-prev,
+.clients-sec .clients-review-slider .slick-next {
+  display: none;
+}
+
+/*==============================
+  Clients Responsive
+================================*/
+
+@media screen and (max-width: 1200px) {
+  .clients-sec .clients-slider .slick-next {
+    right: -130px;
+    top: 65%;
+  }
+  .clients-sec .clients-slider .slick-prev {
+    left: -130px;
+    top: 65%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .clients-sec .clients-slider .slick-next {
+    right: -40px;
+    top: 50%;
+  }
+  .clients-sec .clients-slider .slick-prev {
+    left: -40px;
+    top: 50%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .clients-sec .clients-slider .slick-next,
+  .clients-sec .clients-slider .slick-prev {
+    height: 45px;
+    width: 45px;
+  }
+  .clients-slider {
+    max-width: 375px;
+  }
+  .clients-sec .clients-slider .slick-next {
+    right: -80px;
+  }
+  .clients-sec .clients-slider .slick-prev {
+    left: -80px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .clients-slider {
+    max-width: 165px;
+  }
+  .clients-sec .clients-slider .slick-next {
+    right: -65px;
+  }
+  .clients-sec .clients-slider .slick-prev {
+    left: -65px;
+  }
 }
 
 /* ============================
@@ -454,6 +520,9 @@ Streamline Section
 .streamline-card .title-2 {
   line-height: 55px;
   margin-top: 7px;
+}
+.streamline-sec .subtitle{
+  color: white ;
 }
 .streamline-left-part {
   max-width: 472px;
